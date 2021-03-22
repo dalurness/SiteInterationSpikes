@@ -1,0 +1,5 @@
+JPEG cannot have a transparent background
+https://www.quora.com/Can-a-JPEG-image-have-a-transparent-background
+
+SVG and Canvas were made trasparent through CSS (and JS if you include the fact that the canvas is created through JS)
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="position: relative;">
+        <img src="tiled-check-fabric-1144130.jpg" style="width: 100vw; height: 100vh; z-index: 1; position: absolute;" />
+        <img src="flag.jpg" style="margin-top: 5%; z-index: 3; position: absolute; margin-left: 10%;" />
+        <p style="margin-top: 15%; z-index: 3; position: absolute; margin-left: 10%;color: white"><strong>jpg</strong></p>
+        <img src="flag.png" style="margin-top: 5%; z-index: 3; position: absolute; margin-left: 30%;" />
+        <p style="margin-top: 15%; z-index: 3; position: absolute; margin-left: 30%;color: white"><strong>png</strong></p>
+        <img src="flag.gif" style="margin-top: 5%; z-index: 3; position: absolute; margin-left: 50%;" />
+        <p style="margin-top: 15%; z-index: 3; position: absolute; margin-left: 50%;color: white"><strong>gif</strong></p>
+        <svg width="50" height="50" style="margin-top: 5%; z-index: 3; position: absolute; margin-left: 70%">
+            <rect width="50" height="50" fill="white" fill-opacity="0" />
+            <rect height="50" width="10" fill="red" x="20" />
+            <rect height="10" width="50" fill="red" y="20" />
+
+        </svg>
+        <p style="margin-top: 15%; z-index: 3; position: absolute; margin-left: 70%;color: white"><strong>svg</strong></p>
+        <p style="margin-top: 15%; z-index: 3; position: absolute; margin-left: 90%;color: white"><strong>canvas</strong></p>   
+        <canvas id="canvas" width="50" height="50" style="margin-top: 5%; z-index: 3; position: absolute; margin-left: 90%;" />
+    </div>
+</body>
+</html>
+
+<script>
+    const canvas = document.getElementById('canvas')
+    const ctx = canvas.getContext('2d')
+
+    ctx.fillStyle = "rgba(255,255,255,0)";
+    ctx.fillRect(0,0, canvas.width, canvas.height)
+
+    ctx.fillStyle = "red"
+    ctx.fillRect(20, 0, canvas.width/5, canvas.height)
+
+    ctx.fillStyle = "red"
+    ctx.fillRect(0, 20, canvas.width, canvas.height/5)
+</script>

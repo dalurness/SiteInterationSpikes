@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <h1 id="title">Light</h1>
+        <button id="button" onClick="changeMode()">Change to Dark Mode</button>
+    <div style="position: relative; background-color: white;"></div>
+        <img id="jpg" src="flag.jpg" style="margin-top: 5%; z-index: 3; position: absolute; margin-left: 10%;" />
+        <p class="text" style="margin-top: 15%; z-index: 3; position: absolute; margin-left: 10%;"><strong>jpg</strong></p>
+        <img src="flag.png" style="margin-top: 5%; z-index: 3; position: absolute; margin-left: 30%;" />
+        <p class="text" style="margin-top: 15%; z-index: 3; position: absolute; margin-left: 30%;"><strong>png</strong></p>
+        <img src="flag.gif" style="margin-top: 5%; z-index: 3; position: absolute; margin-left: 50%;" />
+        <p class="text" style="margin-top: 15%; z-index: 3; position: absolute; margin-left: 50%;"><strong>gif</strong></p>
+        <svg width="50" height="50" style="margin-top: 5%; z-index: 3; position: absolute; margin-left: 70%">
+            <rect width="50" height="50" fill="white" fill-opacity="0" />
+            <rect height="50" width="10" fill="red" x="20" />
+            <rect height="10" width="50" fill="red" y="20" />
+
+        </svg>
+        <p class="text" style="margin-top: 15%; z-index: 3; position: absolute; margin-left: 70%;"><strong>svg</strong></p>
+        <p class="text" style="margin-top: 15%; z-index: 3; position: absolute; margin-left: 90%;"><strong>canvas</strong></p>   
+        <canvas id="canvas" width="50" height="50" style="margin-top: 5%; z-index: 3; position: absolute; margin-left: 90%;" />
+    </div>
+</body>
+</html>
+
+<script>
+    const canvas = document.getElementById('canvas')
+    const ctx = canvas.getContext('2d')
+
+    ctx.fillStyle = "rgba(255,255,255,0)";
+    ctx.fillRect(0,0, canvas.width, canvas.height)
+
+    ctx.fillStyle = "red"
+    ctx.fillRect(20, 0, canvas.width/5, canvas.height)
+
+    ctx.fillStyle = "red"
+    ctx.fillRect(0, 20, canvas.width, canvas.height/5)
+
+    var lightMode = true;
+    function changeMode() {
+        if (lightMode) {
+            lightMode = false;
+
+            let title = document.getElementById("title")
+            title.innerHTML = "Dark"
+            title.style.color = "white"
+
+            document.getElementById("button").innerHTML = "Change to Light Mode"
+
+            Array.from(document.getElementsByClassName("text")).forEach(el => {
+                el.style.color = "white"
+            })
+
+            document.body.style.backgroundColor = "black"
+
+            document.getElementById("jpg").src = "blackFlag.jpg"
+
+            
+        } else {
+            lightMode = true;
+
+            let title = document.getElementById("title")
+            title.innerHTML = "Light"
+            title.style.color = "black"
+
+            document.getElementById("button").innerHTML = "Change to Dark Mode"
+
+            Array.from(document.getElementsByClassName("text")).forEach(el => {
+                el.style.color = "black"
+            })
+
+            document.body.style.backgroundColor = "white"
+
+            document.getElementById("jpg").src = "flag.jpg"
+
+            
+        }
+    }
+</script>

@@ -1,0 +1,2 @@
+I used the open source software GIMP to create the .gif, .jpg, and .png. Then I used
+normal svg drawing and canvas drawing in the html file to create those respectively.
